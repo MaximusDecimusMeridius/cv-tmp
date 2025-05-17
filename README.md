@@ -1,13 +1,13 @@
-# AWS Cost Explorer and Diagram Agent
+# AWS Computer Vision Agent
 
-This agent combines the capabilities of AWS Cost Explorer and AWS Diagram MCP servers to provide a powerful tool for analyzing AWS costs and creating architecture diagrams.
+This agent uses the Computer Vision MCP server to analyze images with Amazon Bedrock's Claude model. It is a minimal example today with a single tool but can be extended with additional vision features.
 
 ## Prerequisites
 
 1. Python 3.11 or later
 2. Docker installed and running
 3. AWS credentials configured
-4. Perplexity API key (for additional context)
+4. Perplexity API key (optional)
 
 ## Setup
 
@@ -25,15 +25,10 @@ BEDROCK_LOG_GROUP_NAME=your_log_group
 PERPLEXITY_API_KEY=your_perplexity_key
 ```
 
-3. Build the required Docker images:
+3. Build the computer vision MCP server Docker image:
 ```bash
-# Build the cost explorer MCP server
-cd ../mcp/src/aws-cost-explorer-mcp-server
-docker build -t aws-cost-explorer-mcp:latest .
-
-# Build the diagram MCP server
-cd ../mcp/src/aws-diagram-mcp-server
-docker build -t awslabs/aws-diagram-mcp-server:latest .
+cd aws-cv-mcp-server
+docker build -t awslabs/aws-cv-mcp-server:latest .
 ```
 
 ## Usage
@@ -44,20 +39,16 @@ python main.py
 ```
 
 The agent can:
-1. Create AWS architecture diagrams using the diagram tool
-2. Analyze AWS costs using the cost explorer tool
-3. Provide additional context using Perplexity search
-4. Perform data analysis and visualization using the code interpreter
+1. Analyze images using the computer vision tool
+2. Provide additional context using Perplexity search
+3. Perform data analysis and visualization using the code interpreter
 
-## Example Queries
+## Example Query
 
-- "Create a diagram of a serverless application with API Gateway, Lambda, and DynamoDB"
-- "Show me my AWS costs for the last 7 days"
-- "Create a diagram of my current AWS architecture and analyze its costs"
+- "What's in image `image001.png`?"
 
 ## Notes
 
 - The agent uses Claude 3.5 Sonnet as the foundation model
-- Diagrams are generated using the Python diagrams package
-- Cost analysis is performed using AWS Cost Explorer
-- Additional context is provided by Perplexity search 
+- Image analysis is powered by the AWS Computer Vision MCP server
+- Additional context is provided by Perplexity search

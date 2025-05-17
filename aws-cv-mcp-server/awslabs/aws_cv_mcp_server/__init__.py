@@ -11,9 +11,9 @@
 # and limitations under the License.
 #
 
-"""Diagrams MCP Server package.
+"""Computer Vision MCP Server package.
 
-This package provides an MCP server that creates diagrams using the Python diagrams package DSL.
+This package provides an MCP server that analyzes images using Amazon Bedrock's Claude model.
 """
 
 __version__ = '0.0.0'

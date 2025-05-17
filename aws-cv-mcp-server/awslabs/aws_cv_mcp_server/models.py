@@ -11,7 +11,7 @@
 # and limitations under the License.
 #
 
-"""Models for the diagrams-mcp-server."""
+"""Models used by the computer vision MCP server."""
 
 from enum import Enum
 from pydantic import BaseModel, Field, field_validator

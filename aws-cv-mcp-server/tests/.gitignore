@@ -20,8 +20,6 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
-# Generated diagrams
-generated-diagrams/
 
 # Temporary files
 *.tmp

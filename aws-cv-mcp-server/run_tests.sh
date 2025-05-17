@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script to run the diagrams-mcp-server tests
+# Script to run the aws-cv-mcp-server tests
 
 # Set the Python path to include the current directory and the parent directory
 export PYTHONPATH=$PYTHONPATH:$(pwd):$(pwd)/..
@@ -27,11 +27,6 @@ if [ $? -ne 0 ]; then
     MISSING_PACKAGES+=("pytest pytest-asyncio pytest-cov")
 fi
 
-# Check for diagrams package
-python -c "import diagrams" 2>/dev/null
-if [ $? -ne 0 ]; then
-    MISSING_PACKAGES+=("diagrams")
-fi
 
 # Check for bandit package
 python -c "import bandit" 2>/dev/null
@@ -74,7 +69,7 @@ if [ ${#MISSING_PACKAGES[@]} -gt 0 ]; then
 
     # Verify installation with more verbose output
     echo "Verifying package installations..."
-    for pkg in "pytest" "diagrams" "bandit" "pydantic"; do
+    for pkg in "pytest" "bandit" "pydantic"; do
         echo "Checking for $pkg..."
         python -c "import $pkg; print(f'$pkg version: {$pkg.__version__}')" 2>/dev/null
         if [ $? -ne 0 ]; then

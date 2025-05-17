@@ -1,11 +1,10 @@
 [project]
 name = "awslabs.aws-cv-mcp-server"
 version = "0.9.6"
-description = "An MCP server that seamlessly creates diagrams using the Python diagrams package DSL"
+description = "An MCP server that provides computer vision capabilities using Amazon Bedrock"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
 dependencies = [
-    "diagrams>=0.24.4",
     "boto3>=1.37.27",
     "mcp[cli]>=1.6.0",
     "pydantic>=2.10.6",
@@ -128,7 +127,7 @@ skips = ["B102"]
 exclude_dirs = ["venv","tests"]
 
 # Per-file skips
-per_file_skips = { "awslabs/aws_cv_mcp_server/diagrams.py" = ["B102"] }
+
 
 [tool.pytest.ini_options]
 testpaths = "tests"
