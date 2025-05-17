@@ -42,7 +42,6 @@ source = { editable = "." }
 dependencies = [
     { name = "bandit" },
     { name = "boto3" },
-    { name = "diagrams" },
     { name = "mcp", extra = ["cli"] },
     { name = "pydantic" },
 ]
@@ -62,7 +61,6 @@ dev = [
 requires-dist = [
     { name = "bandit", specifier = ">=1.7.5" },
     { name = "boto3", specifier = ">=1.37.27" },
-    { name = "diagrams", specifier = ">=0.24.4" },
     { name = "mcp", extras = ["cli"], specifier = ">=1.6.0" },
     { name = "pydantic", specifier = ">=2.10.6" },
 ]
@@ -284,19 +282,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/bf/70/3ea48dc9e958d7d66c44c9944809181f1ca79aaef25703c023b5092d34ff/decli-0.6.2-py3-none-any.whl", hash = "sha256:2fc84106ce9a8f523ed501ca543bdb7e416c064917c12a59ebdc7f311a97b7ed", size = 7854, upload-time = "2024-04-28T17:41:04.663Z" },
 ]
 
-[[package]]
-name = "diagrams"
-version = "0.24.4"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "graphviz" },
-    { name = "jinja2" },
-    { name = "pre-commit" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/0c/50/abb3442117b933ae08c948b4c08672eba5f78a35ef820c03f5979affbe3b/diagrams-0.24.4.tar.gz", hash = "sha256:367b3056bc8875b5a32dcf66c7aad961cb83527b8f345dced82f17ee82781f72", size = 26913707, upload-time = "2025-03-10T07:11:56.402Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/59/f1/f83298463453662f27bd93a21a9cacc157b62f665db795f26e1a25143b7b/diagrams-0.24.4-py3-none-any.whl", hash = "sha256:41c5c03e1317ada0a64287f704e5e9d9c8794addce96b66dd831a536aa7e6507", size = 27830571, upload-time = "2025-03-10T07:11:49.623Z" },
-]
 
 [[package]]
 name = "distlib"
