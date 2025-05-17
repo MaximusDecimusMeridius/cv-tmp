@@ -44,8 +44,10 @@ The agent can:
 3. Perform data analysis and visualization using the code interpreter
 
 ## Example Query
-
 - "What's in image `image001.png`?"
+
+## Running Tests
+Run `bash aws-cv-mcp-server/run_tests.sh` to execute the unit tests. The script installs dependencies and uses mocks so AWS credentials are not required.
 
 ## Notes
 
